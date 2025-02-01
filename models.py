@@ -1,4 +1,4 @@
-from pydantic import BaseModel, PositiveFloat
+from pydantic import BaseModel, ConfigDict, PositiveFloat
 
 # DATA MODEL FOR VALIDATION 
 class SeashellData(BaseModel): 
@@ -6,5 +6,8 @@ class SeashellData(BaseModel):
     species: str | None 
     color: str | None 
     weight: PositiveFloat | None  # Weight cannot be negative 
-    addDescription: str | None
+    description: str | None
 
+class SeashellResponse(SeashellData):
+    model_config = ConfigDict(from_attributes=True)
+    id: int 

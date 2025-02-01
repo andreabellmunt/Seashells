@@ -12,7 +12,7 @@ class Seashell(Base): # DB model
     species = Column(String)
     color = Column(String)
     weight = Column(Float)
-    addDescription = Column(String)
+    description = Column(String)
 
 # HANDLING THE CONNECTION TO DB 
 db_file = "seashells.db"
