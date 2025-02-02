@@ -1,12 +1,13 @@
 from pydantic import BaseModel, ConfigDict, PositiveFloat
+from typing import Optional
 
 # DATA MODEL FOR VALIDATION 
 class SeashellData(BaseModel): 
-    name: str 
-    species: str | None 
-    color: str | None 
-    weight: PositiveFloat | None  # Weight cannot be negative 
-    description: str | None
+    name: Optional[str] = None 
+    species: Optional[str] = None  
+    color: Optional[str] = None 
+    weight: Optional[PositiveFloat] = None # Weight cannot be negative 
+    description: Optional[str] = None 
 
 class SeashellResponse(SeashellData):
     model_config = ConfigDict(from_attributes=True)
