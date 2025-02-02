@@ -54,4 +54,4 @@ def delete_seashell(seashell_id: int, session: Session = Depends(get_db_session)
         raise HTTPException(status_code=404, detail="Seashell not found")
     session.delete(seashell)  # Deleting object
     session.commit()  # Commit changes
-    return {"Message": f"Seashell {seashell_id} deleted"}  # Successful message
+    return 
